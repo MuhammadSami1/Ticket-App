@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
 
 const DeleteBlock = ({ id }) => {
+  const BASE_URL =
+    process.env.NODE_ENV === "production" ? "" : "http://127.0.0.1:3000";
   const router = useRouter();
 
   const deleteTicket = async () => {
-    const res = await fetch(`http://localhost:3000/api/Tickets/${id}`, {
+    const res = await fetch(`${BASE_URL}/api/Tickets/${id}`, {
       method: "DELETE",
     });
     if (res.ok) {

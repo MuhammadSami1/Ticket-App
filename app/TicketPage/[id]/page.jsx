@@ -1,7 +1,10 @@
 import TicketForm from "@/app/(components)/TicketForm";
 
 const getTicketById = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/Tickets/${id}`, {
+  const BASE_URL =
+    process.env.NODE_ENV === "production" ? "" : "http://127.0.0.1:3000";
+
+  const res = await fetch(`${BASE_URL}/api/Tickets/${id}`, {
     cache: "no-store",
   });
 
@@ -26,7 +29,7 @@ const TicketPage = async ({ params }) => {
     };
   }
 
-   return <TicketForm ticket={updateTicketData} />;
+  return <TicketForm ticket={updateTicketData} />;
 };
 
 export default TicketPage;
