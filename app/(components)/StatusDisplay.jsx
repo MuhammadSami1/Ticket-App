@@ -1,7 +1,8 @@
 const StatusDisplay = ({ status }) => {
+  console.log("Received status:", status);
   const getColor = (status) => {
     let color = "bg-slate-700";
-    switch (status.toLowerCase()) {
+    switch (status.toLowerCase().trim()) {
       case "done":
         color = "bg-green-200";
         return color;

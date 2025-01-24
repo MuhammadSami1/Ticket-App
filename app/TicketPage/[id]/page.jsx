@@ -26,7 +26,7 @@ const TicketPage = async ({ params }) => {
     };
   }
 
-  return <TicketForm ticket={updateTicketData} />;
+   return <TicketForm ticket={updateTicketData} />;
 };
 
 export default TicketPage;
